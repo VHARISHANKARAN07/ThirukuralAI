@@ -1,0 +1,1121 @@
+/* ==========================================================================
+   KURAL VOICE — CLASSICAL ANCIENT TAMIL SANGAM DESIGN SYSTEM
+   Palette: Rich Saffron/Orange, Ruby/Terracotta Red, Turmeric Gold, Sandalwood Brown
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cinzel+Decorative:wght@700&family=Noto+Serif+Tamil:wght@400;600;700;900&family=Outfit:wght@300;400;500;600;700&family=Tiro+Tamil:ital@0;1&family=Rozha+One&display=swap');
+
+:root {
+  /* Colors */
+  --bg-primary: #190a04;
+  --bg-secondary: #271207;
+  --bg-tertiary: #3a1a0b;
+  --bg-card: rgba(45, 19, 8, 0.88);
+  --bg-dialog: rgba(35, 15, 6, 0.92);
+
+  --saffron-bright: #ff6d00;
+  --saffron-main: #e65100;
+  --saffron-deep: #bf360c;
+
+  --red-crimson: #c62828;
+  --red-royal: #b71c1c;
+  --red-dark: #7f0000;
+
+  --gold-light: #ffe082;
+  --gold-main: #ffb300;
+  --gold-bright: #ffd54f;
+  --gold-deep: #ffa000;
+  --brass: #c59b27;
+
+  --brown-wood: #3e2723;
+  --brown-sandal: #4e342e;
+  --brown-dark: #23120b;
+
+  --palm-light: #faedcd;
+  --palm-mid: #f4e1b5;
+  --palm-dark: #dfba7a;
+  --palm-border: #9c672b;
+  --palm-ink: #2b1202;
+
+  --text-primary: #fff8e7;
+  --text-secondary: #f0d5b5;
+  --text-muted: #c29d78;
+
+  --border-gold: rgba(255, 179, 0, 0.35);
+  --border-saffron: rgba(230, 81, 0, 0.4);
+
+  --shadow-float: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(230, 81, 0, 0.25);
+  --shadow-gold: 0 0 25px rgba(255, 179, 0, 0.35);
+  --shadow-palm: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(230, 81, 0, 0.25), inset 0 0 22px rgba(92, 45, 14, 0.45);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-full: 9999px;
+
+  --font-tamil: 'Tiro Tamil', 'Noto Serif Tamil', serif;
+  --font-classical: 'Cinzel Decorative', 'Cinzel', serif;
+  --font-serif: 'Cinzel', serif;
+  --font-sans: 'Outfit', -apple-system, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Background Atmosphere & Floating Embers */
+body {
+  background: 
+    radial-gradient(ellipse at 50% 0%, rgba(230, 81, 0, 0.25) 0%, transparent 60%),
+    radial-gradient(circle at 10% 40%, rgba(183, 28, 28, 0.2) 0%, transparent 45%),
+    radial-gradient(circle at 90% 70%, rgba(255, 179, 0, 0.15) 0%, transparent 50%),
+    linear-gradient(180deg, #240f06 0%, #170803 50%, #0d0401 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sacred Geometric Kolam Border Watermark */
+.kolam-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255, 179, 0, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+/* App Wrapper */
+.app-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 12px 18px;
+}
+
+/* ==========================================================================
+   HEADER — Ancient Tamil Royal Sanctum
+   ========================================================================== */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, rgba(58, 26, 11, 0.85) 0%, rgba(35, 15, 6, 0.95) 100%);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(230, 81, 0, 0.2);
+  backdrop-filter: blur(12px);
+  margin-bottom: 14px;
+  flex-shrink: 0;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lamp-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffb300 0%, #e65100 60%, #7f0000 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 0 25px rgba(255, 179, 0, 0.6), inset 0 0 8px rgba(255, 255, 255, 0.4);
+  animation: lampGlow 3s ease-in-out infinite alternate;
+  flex-shrink: 0;
+}
+
+@keyframes lampGlow {
+  0% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 179, 0, 0.5); }
+  100% { transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 109, 0, 0.85); }
+}
+
+.brand-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.tamil-title {
+  font-family: var(--font-tamil);
+  font-size: 1.35rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #ffe082 0%, #ffb300 50%, #ff6d00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(255, 109, 0, 0.3);
+}
+
+.sub-title {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sub-title span {
+  color: var(--gold-bright);
+}
+
+/* Header Controls */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-selector-pill {
+  display: flex;
+  align-items: center;
+  background: rgba(25, 10, 4, 0.8);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-full);
+  padding: 4px 12px;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.lang-selector-pill:hover {
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 14px rgba(255, 179, 0, 0.35);
+}
+
+.lang-select-native {
+  background: transparent;
+  border: none;
+  color: var(--gold-light);
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+.lang-select-native option {
+  background: #240f06;
+  color: var(--gold-light);
+  padding: 6px;
+}
+
+.btn-icon-sacred {
+  background: linear-gradient(135deg, rgba(230, 81, 0, 0.3) 0%, rgba(183, 28, 28, 0.4) 100%);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-bright);
+  padding: 7px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.btn-icon-sacred:hover {
+  background: linear-gradient(135deg, var(--saffron-main) 0%, var(--red-royal) 100%);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(230, 81, 0, 0.4);
+}
+
+/* Auto Voice Toggle Pill */
+.btn-voice-toggle {
+  background: rgba(25, 10, 4, 0.8);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-light);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.btn-voice-toggle.active {
+  background: linear-gradient(135deg, rgba(230, 81, 0, 0.4) 0%, rgba(183, 28, 28, 0.5) 100%);
+  border-color: var(--gold-bright);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255, 179, 0, 0.3);
+}
+
+/* Google Sign-In Button */
+.btn-google-sign-in {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #3c4043;
+  border: 1px solid #dadce0;
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+}
+
+.btn-google-sign-in:hover {
+  background: #f8f9fa;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2), 0 2px 8px rgba(0,0,0,0.3);
+  transform: translateY(-1px);
+}
+
+.btn-google-sign-in svg {
+  flex-shrink: 0;
+}
+
+/* User Profile Badge */
+.user-profile-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(30, 12, 5, 0.85);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-full);
+  padding: 4px 10px 4px 6px;
+}
+
+.user-avatar-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold-bright);
+  object-fit: cover;
+}
+
+.user-name-txt {
+  font-size: 0.8rem;
+  color: var(--gold-light);
+  font-weight: 600;
+  max-width: 110px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-sign-out {
+  background: transparent;
+  border: 1px solid rgba(255, 179, 0, 0.35);
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-sign-out:hover {
+  background: var(--red-royal);
+  color: #fff;
+  border-color: var(--red-crimson);
+}
+
+/* Auth Invite Card */
+.auth-invite-banner {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: rgba(20, 8, 3, 0.6);
+  border: 1px dashed rgba(255, 179, 0, 0.3);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.auth-invite-banner p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   MAIN WORKSPACE — FLOATING DIALOG CONTAINER
+   ========================================================================== */
+.main-workspace {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(38, 16, 7, 0.85) 0%, rgba(26, 10, 4, 0.95) 100%);
+  border: 1.5px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-float);
+  backdrop-filter: blur(16px);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Top Sacred Topic Ribbon (Floating Quick Chips) */
+.quick-topics-ribbon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(255, 179, 0, 0.2);
+  background: rgba(20, 8, 3, 0.6);
+  flex-shrink: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-main) transparent;
+}
+
+.quick-topics-ribbon::-webkit-scrollbar {
+  height: 4px;
+}
+
+.quick-topics-ribbon::-webkit-scrollbar-thumb {
+  background: var(--gold-main);
+  border-radius: 4px;
+}
+
+.topic-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(58, 26, 11, 0.7);
+  border: 1px solid rgba(255, 179, 0, 0.25);
+  color: var(--text-secondary);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.topic-chip:hover {
+  background: linear-gradient(135deg, rgba(230, 81, 0, 0.6) 0%, rgba(183, 28, 28, 0.6) 100%);
+  color: #fff;
+  border-color: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 109, 0, 0.3);
+}
+
+/* Chat Messages Container */
+.chat-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  scroll-behavior: smooth;
+}
+
+.chat-scroll-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-scroll-area::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-main) 0%, var(--saffron-main) 100%);
+  border-radius: 6px;
+}
+
+/* Welcome Sage Hero Banner */
+.welcome-sage-card {
+  background: linear-gradient(135deg, rgba(62, 28, 12, 0.7) 0%, rgba(35, 15, 6, 0.85) 100%);
+  border: 1.5px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 179, 0, 0.08);
+}
+
+.sage-avatar-ring {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff3e0 0%, #ffb300 45%, #b71c1c 90%);
+  border: 2px solid var(--gold-bright);
+  box-shadow: 0 0 20px rgba(255, 179, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  flex-shrink: 0;
+}
+
+.welcome-text h2 {
+  font-family: var(--font-tamil);
+  font-size: 1.25rem;
+  color: var(--gold-bright);
+  margin-bottom: 4px;
+}
+
+.welcome-text p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   CHAT MESSAGES
+   ========================================================================== */
+.message-row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  animation: fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* User Message */
+.message-row.user {
+  justify-content: flex-end;
+}
+
+.message-bubble-user {
+  background: linear-gradient(135deg, #e65100 0%, #b71c1c 100%);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 18px 18px 4px 18px;
+  max-width: 80%;
+  box-shadow: 0 8px 20px rgba(183, 28, 28, 0.35);
+  border: 1px solid rgba(255, 213, 79, 0.3);
+  position: relative;
+}
+
+.user-lang-tag {
+  font-size: 0.68rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  margin-bottom: 6px;
+  display: inline-block;
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+.user-query-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* Thiruvalluvar Bot Response */
+.message-row.bot {
+  justify-content: flex-start;
+}
+
+.bot-avatar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.sage-mini-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffe082 0%, #e65100 65%, #7f0000 100%);
+  border: 1.5px solid var(--gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 0 14px rgba(255, 179, 0, 0.4);
+}
+
+.sage-name-label {
+  font-size: 0.65rem;
+  color: var(--gold-main);
+  font-weight: 700;
+  text-align: center;
+}
+
+.bot-response-content {
+  flex: 1;
+  max-width: 88%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ==========================================================================
+   PALM-LEAF SCRIPTURE (ஓலைச்சுவடி - OLAI CHUVADI)
+   Masterpiece Ancient Tamil Scroll Representation
+   ========================================================================== */
+.palm-leaf-scripture {
+  position: relative;
+  background: 
+    linear-gradient(90deg, rgba(82, 41, 14, 0.22) 0%, transparent 6%, transparent 94%, rgba(82, 41, 14, 0.22) 100%),
+    repeating-linear-gradient(0deg, rgba(120, 65, 18, 0.05) 0px, rgba(120, 65, 18, 0.05) 1px, transparent 1px, transparent 4px),
+    linear-gradient(180deg, #d8a46b 0%, #faedcd 15%, #f4e1b5 50%, #e5c58a 85%, #b57a3e 100%);
+  border: 2px solid var(--palm-border);
+  border-radius: 14px;
+  padding: 20px 28px;
+  box-shadow: var(--shadow-palm);
+  color: var(--palm-ink);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.palm-leaf-scripture:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.7), 0 0 35px rgba(230, 81, 0, 0.4);
+}
+
+/* Authentic Binding Cord Holes */
+.palm-cord-hole {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1a0a03 35%, #5a2e10 75%, #a67332 100%);
+  border: 2px solid #ca994f;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.9), 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+.palm-cord-hole.left { left: 10px; }
+.palm-cord-hole.right { right: 10px; }
+
+/* Palm Leaf Header (Kural & Chapter Meta) */
+.palm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(110, 56, 18, 0.35);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.kural-badge-sacred {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-classical);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #5c2c0a;
+  letter-spacing: 0.5px;
+}
+
+.athigaram-meta {
+  font-family: var(--font-tamil);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #723b12;
+}
+
+/* Sacred Tamil Couplet Inscription */
+.palm-verse-box {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.palm-line {
+  font-family: var(--font-tamil);
+  font-size: 1.28rem;
+  font-weight: 800;
+  color: #240e02;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65), 0 -1px 0 rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.4px;
+  line-height: 1.45;
+}
+
+.palm-line.line1 {
+  text-align: left;
+  padding-left: 6px;
+}
+
+.palm-line.line2 {
+  text-align: left;
+  padding-left: 28px; /* Classic Tamil indentation for 3-seer second line */
+  color: #381604;
+}
+
+/* Palm Leaf Action Toolbar */
+.palm-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(110, 56, 18, 0.35);
+}
+
+.palm-btn-pill {
+  background: rgba(100, 48, 14, 0.15);
+  border: 1px solid rgba(130, 68, 22, 0.4);
+  color: #4a2107;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.palm-btn-pill:hover {
+  background: #5d2e0e;
+  color: #ffeed3;
+  border-color: #5d2e0e;
+}
+
+.palm-btn-pill.primary {
+  background: linear-gradient(135deg, #8a2e0e 0%, #5d1c08 100%);
+  color: #fffaea;
+  border: 1px solid #c97f3b;
+  box-shadow: 0 3px 8px rgba(93, 28, 8, 0.35);
+}
+
+.palm-btn-pill.primary:hover {
+  background: linear-gradient(135deg, #b03d15 0%, #7d260c 100%);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   EXPLANATIONS & MULTILINGUAL SAGE GUIDANCE
+   ========================================================================== */
+
+/* Sacred Situation & Story Counsel Card (வள்ளுவர் நல்வாக்கு) */
+.sage-counsel-card {
+  background: linear-gradient(135deg, rgba(82, 36, 12, 0.9) 0%, rgba(45, 18, 6, 0.95) 100%);
+  border: 1.5px solid var(--gold-bright);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  box-shadow: 0 0 22px rgba(255, 179, 0, 0.28), 0 8px 24px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  animation: counselGlow 3.5s infinite alternate ease-in-out;
+}
+
+@keyframes counselGlow {
+  0% { border-color: rgba(255, 179, 0, 0.45); box-shadow: 0 0 16px rgba(255, 179, 0, 0.18); }
+  100% { border-color: rgba(255, 213, 79, 0.9); box-shadow: 0 0 28px rgba(255, 179, 0, 0.45); }
+}
+
+.sage-counsel-card::before {
+  content: '🪶';
+  position: absolute;
+  right: -8px;
+  bottom: -15px;
+  font-size: 72px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.sage-counsel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed rgba(255, 179, 0, 0.35);
+}
+
+.sage-counsel-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--gold-bright);
+  letter-spacing: 0.6px;
+}
+
+.sage-counsel-tag {
+  background: rgba(230, 81, 0, 0.35);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  color: var(--gold-light);
+  padding: 2px 10px;
+  font-weight: 600;
+}
+
+.sage-counsel-body {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #fff6e4;
+  font-family: var(--font-sans);
+}
+
+.sage-counsel-body p {
+  margin: 0;
+}
+
+.explanation-card {
+  background: rgba(45, 20, 9, 0.75);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Transliteration Card */
+.transliteration-box {
+  background: rgba(25, 10, 4, 0.6);
+  border-left: 3px solid var(--gold-main);
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+/* Section Header */
+.section-header-tag {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.section-label {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--gold-bright);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Spoken Language Translation (Prominently Styled) */
+.user-lang-explanation-block {
+  background: linear-gradient(135deg, rgba(62, 28, 12, 0.8) 0%, rgba(42, 18, 7, 0.9) 100%);
+  border: 1px solid rgba(255, 179, 0, 0.4);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  margin-top: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.user-lang-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 179, 0, 0.2);
+}
+
+.user-lang-badge {
+  background: linear-gradient(90deg, var(--saffron-main) 0%, var(--red-royal) 100%);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.user-lang-body {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: #fff8eb;
+}
+
+/* Commentaries Accordion (Tamil Scholars) */
+.scholars-tabs-container {
+  margin-top: 10px;
+}
+
+.scholars-nav {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.scholar-tab-btn {
+  background: rgba(25, 10, 4, 0.7);
+  border: 1px solid rgba(255, 179, 0, 0.25);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scholar-tab-btn.active {
+  background: var(--saffron-main);
+  color: #fff;
+  border-color: var(--gold-bright);
+}
+
+.scholar-content {
+  font-family: var(--font-tamil);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  background: rgba(20, 8, 3, 0.5);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   AUDIO EQUALIZER & VOICE CONTROLS
+   ========================================================================== */
+.audio-equalizer-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 18px;
+  padding: 0 4px;
+}
+
+.eq-bar {
+  width: 3px;
+  height: 100%;
+  background: var(--gold-bright);
+  border-radius: 2px;
+  animation: eqWave 1.2s ease-in-out infinite alternate;
+}
+
+.eq-bar:nth-child(1) { animation-delay: 0.1s; }
+.eq-bar:nth-child(2) { animation-delay: 0.3s; }
+.eq-bar:nth-child(3) { animation-delay: 0.5s; }
+.eq-bar:nth-child(4) { animation-delay: 0.2s; }
+
+@keyframes eqWave {
+  0% { height: 25%; }
+  100% { height: 100%; }
+}
+
+/* ==========================================================================
+   INPUT BAR — FLOATING SACRED CONCH CONTROLLER
+   ========================================================================== */
+.chat-input-wrapper {
+  padding: 14px 18px;
+  background: linear-gradient(180deg, rgba(35, 15, 6, 0.95) 0%, rgba(20, 8, 3, 0.98) 100%);
+  border-top: 1.5px solid var(--border-gold);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.input-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(15, 6, 2, 0.8);
+  border: 1.5px solid var(--border-gold);
+  border-radius: var(--radius-full);
+  padding: 6px 10px 6px 14px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6), 0 0 15px rgba(230, 81, 0, 0.15);
+  transition: all 0.25s ease;
+  margin: 0;
+  width: 100%;
+}
+
+.input-controls-row:focus-within {
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 25px rgba(255, 179, 0, 0.35);
+}
+
+.chat-input-field {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 0.94rem;
+  font-family: var(--font-sans);
+}
+
+.chat-input-field::placeholder {
+  color: var(--text-muted);
+}
+
+/* Mic Action Button */
+.btn-mic-pulse {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, var(--saffron-main) 0%, var(--red-royal) 100%);
+  color: #fff;
+  font-size: 1.15rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(230, 81, 0, 0.4);
+  transition: all 0.25s ease;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.btn-mic-pulse:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 22px rgba(255, 109, 0, 0.7);
+}
+
+.btn-mic-pulse.listening {
+  background: #d50000;
+  animation: pulseListen 1.5s infinite;
+}
+
+@keyframes pulseListen {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(213, 0, 0, 0.7); }
+  70% { transform: scale(1.15); box-shadow: 0 0 0 16px rgba(213, 0, 0, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(213, 0, 0, 0); }
+}
+
+/* Send Action Button */
+.btn-send-sacred {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-bright);
+  background: linear-gradient(135deg, #ffb300 0%, #e65100 100%);
+  color: #210c03;
+  font-size: 1.15rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(255, 179, 0, 0.4);
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.btn-send-sacred:hover {
+  transform: scale(1.08);
+  color: #000;
+  box-shadow: 0 0 22px rgba(255, 179, 0, 0.8);
+}
+
+/* Input Helper Hint Bar */
+.input-hint-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  padding: 0 6px;
+}
+
+.input-hint-bar .voice-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gold-main);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 6px;
+  }
+  .site-header {
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+  .tamil-title {
+    font-size: 1.1rem;
+  }
+  .palm-line {
+    font-size: 1.1rem;
+  }
+  .palm-line.line2 {
+    padding-left: 14px;
+  }
+  .palm-leaf-scripture {
+    padding: 16px 18px;
+  }
+  .palm-actions {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .bot-response-content {
+    max-width: 100%;
+  }
+  .message-bubble-user {
+    max-width: 90%;
+  }
+}
+
+/* Indic Voice & Venpa Meter Badge */
+.voice-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 179, 0, 0.12);
+  border: 1px solid rgba(255, 179, 0, 0.35);
+  border-radius: var(--radius-full);
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold-bright);
+  box-shadow: 0 0 12px rgba(255, 179, 0, 0.15);
+  letter-spacing: 0.3px;
+  cursor: default;
+  transition: all 0.3s ease;
+}
+
+.voice-badge-pill:hover {
+  background: rgba(255, 179, 0, 0.2);
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 16px rgba(255, 179, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+  .voice-badge-pill {
+    display: none;
+  }
+}

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ta">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#23120b">
+    <meta name="description" content="Kural Voice: வள்ளுவர் மெய்நிகர் உரையாடல். Ancient Tamil Palm-Leaf Scripture Thirukkural AI Companion with Multilingual Voice.">
+    <title>திருக்குறள் குரல் — வள்ளுவர் மெய்நிகர் உரையாடல் | Kural Voice</title>
+    
+    <!-- Google Fonts Preconnect & Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cinzel+Decorative:wght@700&family=Noto+Serif+Tamil:wght@400;600;700;900&family=Outfit:wght@300;400;500;600;700&family=Tiro+Tamil:ital@0;1&family=Rozha+One&display=swap" rel="stylesheet">
+    
+    <!-- Classical Ancient Tamil Design System -->
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- Firebase SDK (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore-compat.js"></script>
+    <script src="./assets/firebase-config-bJLv7ga_.js"></script>
+    <script src="./assets/firebase-auth-BZmU-wfv.js"></script>
+  </head>
+  <body>
+    <!-- Subtle Sacred Kolam Watermark -->
+    <div class="kolam-pattern" aria-hidden="true"></div>
+
+    <div class="app-container">
+      <!-- Classical Sanctum Header -->
+      <header class="site-header" role="banner">
+        <div class="brand-section">
+          <div class="lamp-icon-box" title="அகல் விளக்கு (Sacred Lamp)" aria-hidden="true">
+            🪔
+          </div>
+          <div class="brand-title">
+            <h1 class="tamil-title">திருக்குறள் குரல் • Kural Voice</h1>
+            <div class="sub-title">
+              வள்ளுவர் மெய்நிகர் உரையாடல் <span>✦ Ancient Tamil Sage</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <!-- Indic Voice & Venpa Meter Badge -->
+          <div id="voiceEngineBadge" class="voice-badge-pill" title="Indic Voice AI: Whisper Domain Prompting & Classical Venpa Cadence (450ms Caesura)">
+            🎙️ விஸ்பர் ASR • 📜 வெண்பா ஓசை
+          </div>
+
+          <!-- Auto Voice Toggle -->
+          <button id="btnAutoVoiceToggle" class="btn-voice-toggle active" title="Toggle Auto Voice (தானியங்கு குரல்)">
+            🔊 தானியங்கு குரல் (ON)
+          </button>
+
+          <!-- Language Selector -->
+          <div class="lang-selector-pill" title="மொழி தேர்வு (Choose Language)">
+            <select id="langSelectNative" class="lang-select-native" aria-label="Select Language">
+              <option value="auto">🌐 Auto-Detect Language (தானியங்கு)</option>
+            </select>
+          </div>
+
+          <!-- Random Kural -->
+          <button id="btnHeaderRandom" class="btn-icon-sacred" title="ஏதேனும் ஒரு குறள் (Random Kural)">
+            🎲 நாள் ஒரு குறள்
+          </button>
+
+          <!-- Google Authentication Section -->
+          <div id="authContainer" class="auth-container">
+            <button id="btnGoogleSignIn" class="btn-google-sign-in" title="Sign in with Google" type="button">
+              <svg class="google-svg" viewBox="0 0 24 24" width="16" height="16">
+                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.14z"/>
+                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+                <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+              </svg>
+              <span>Sign in with Google</span>
+            </button>
+            <div id="userProfileBadge" class="user-profile-badge" style="display:none;">
+              <img id="userAvatarImg" src="" alt="User" class="user-avatar-img"/>
+              <span id="userNameTxt" class="user-name-txt">User</span>
+              <button id="btnSignOut" class="btn-sign-out" title="Sign Out">வெளியேறு</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Floating Dialog Workspace -->
+      <main class="main-workspace" role="main">
+        <!-- Quick Sacred Topics Ribbon -->
+        <nav class="quick-topics-ribbon" id="quickTopicsRibbon" aria-label="Quick Topics">
+          <!-- Dynamic Topic Chips inserted here -->
+        </nav>
+
+        <!-- Conversational Chat & Palm-Leaf Scroll Area -->
+        <section class="chat-scroll-area" id="chatScrollArea" aria-live="polite">
+          <!-- Welcome and dynamically generated dialogue messages appear here -->
+        </section>
+
+        <!-- Floating Sacred Input Controller -->
+        <footer class="chat-input-wrapper">
+          <form id="chatForm" class="input-controls-row" onsubmit="event.preventDefault(); if(window.submitChatQuery) window.submitChatQuery();">
+            <input 
+              type="text" 
+              id="chatInput" 
+              class="chat-input-field" 
+              placeholder="Ask in Hindi, English, Tamil... 'theen' (3) / 'सच्चा मित्र कौन है?' / 'Control anger' / 'குறள் 10'"
+              autocomplete="off"
+              aria-label="Ask Thiruvalluvar a question"
+            />
+
+            <!-- Microphone Button for Multilingual Voice Input -->
+            <button 
+              id="btnMic" 
+              class="btn-mic-pulse" 
+              type="button" 
+              title="குரல் வழி கேட்க (Speak via microphone)"
+              aria-label="Voice input"
+            >
+              🎙️
+            </button>
+
+            <!-- Send Action Button -->
+            <button 
+              id="btnSend" 
+              class="btn-send-sacred" 
+              type="submit" 
+              title="அனுப்புக (Send)"
+              aria-label="Send query"
+            >
+              ➤
+            </button>
+          </form>
+
+          <!-- Bottom Status & Hint Bar -->
+          <div class="input-hint-bar">
+            <div class="voice-status">
+              <span id="voiceIndicator">🔊 பல்மொழி குரல் ஒலிபரப்பு (Voice Active)</span>
+              <div class="audio-equalizer-pill" style="display:none;" id="activeAudioEq">
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+              </div>
+            </div>
+            <div>
+              <span>ஓலைச்சுவடி வடிவம் • 1330 குறள்கள் • Google Sync</span>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <!-- Application ES Module -->
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

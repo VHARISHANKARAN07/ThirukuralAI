@@ -1,0 +1,1 @@
+window.THIRUKURAL_FIREBASE_CONFIG={apiKey:"AIzaSyBx3Lpk6Sqw_VPqnL-rf69OT93QPHc1mUY",authDomain:"thiruvaluvar.firebaseapp.com",projectId:"thiruvaluvar",storageBucket:"thiruvaluvar.firebasestorage.app",messagingSenderId:"288478538210",appId:"1:288478538210:web:9082b221bc564c1b8531bb",measurementId:"G-37G9Q0JBGF"};
